@@ -1,4 +1,4 @@
-import { fetchFromTMDB } from "../services/tmdbService.js";
+import { fetchFromTMDB } from "../Services/tmdbService.js";
 import { getMoviesByCategory } from "../utils/movieHelper.js";
 
 // =====================================

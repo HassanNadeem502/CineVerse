@@ -1,5 +1,5 @@
 import Movie from "../models/Movie.js";
-import { fetchFromTMDB } from "../services/tmdbService.js";
+import { fetchFromTMDB } from "../Services/tmdbService.js";
 
 export const getMoviesByCategory = async (endpoint, category) => {
   // 1. Check MongoDB
