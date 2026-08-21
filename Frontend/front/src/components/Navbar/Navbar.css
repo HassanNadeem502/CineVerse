@@ -1,0 +1,21 @@
+/* navbar.css
+   Only used for the one thing pure Tailwind utility classes can't express:
+   a custom keyframe for the profile dropdown's fade/slide-in.
+   Import this once in your Navbar.jsx (or globally in index.css):
+     import "../styles/navbar.css";
+*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make sure Poppins is loaded globally (add once to index.html <head> or index.css):
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*/

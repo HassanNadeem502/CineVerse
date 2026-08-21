@@ -1,0 +1,36 @@
+/* footer.css
+   Floating "starfield" particle animation for the CineVerse Footer.
+   Import once: import "../styles/footer.css";
+*/
+
+.footer-particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.9) 0%, rgba(139, 92, 246, 0) 70%);
+  opacity: 0;
+  animation-name: footerFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes footerFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-160px) translateX(12px);
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-320px) translateX(-8px);
+    opacity: 0;
+  }
+}

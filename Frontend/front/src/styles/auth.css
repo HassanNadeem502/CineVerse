@@ -1,0 +1,19 @@
+/* auth.css
+   Shared entrance animation for auth pages (ForgotPassword, Login, ResetPassword, etc).
+   Import once per page: import "../styles/auth.css";
+*/
+
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-fade-in {
+  animation: authFadeIn 0.5s ease-out;
+}
