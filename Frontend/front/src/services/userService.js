@@ -43,7 +43,7 @@ export const changePassword = async (passwordData, token) => {
       },
 
       body: JSON.stringify(passwordData),
-    }
+    },
   );
 
   return response.json();

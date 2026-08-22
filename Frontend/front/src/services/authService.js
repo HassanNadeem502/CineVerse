@@ -27,21 +27,20 @@ export const loginUser = async (userData) => {
   return await response.json();
 };
 
-export const verifyEmail = async(formData)=>{
+export const verifyEmail = async (formData) => {
+  const response = await fetch(
+    "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/verify-email",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    },
+  );
 
-    const response = await fetch(
-        "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/verify-email",
-        {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(formData)
-        }
-    );
-
-    return await response.json();
-}
+  return await response.json();
+};
 
 //Resend OTP api
 export const resendOTP = async (data) => {
@@ -49,15 +48,15 @@ export const resendOTP = async (data) => {
     "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/resend-otp",
     {
       method: "POST",
-      headers: {  
-      "Content-Type": "application/json",
+      headers: {
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }
+    },
   );
 
   return await response.json();
-}
+};
 
 //resetpassword api
 export const resetPassword = async (data) => {
@@ -69,8 +68,8 @@ export const resetPassword = async (data) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }
-  );  
+    },
+  );
 
   return await response.json();
 };
@@ -85,9 +84,8 @@ export const forgotPassword = async (data) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }
+    },
   );
 
   return await response.json();
-
 };

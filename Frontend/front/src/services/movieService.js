@@ -99,7 +99,7 @@ export const getSimilarMovies = async (movieId) => {
   if (!response.ok) {
     throw new Error("Failed to fetch similar movies");
   }
-  
+
   const data = await response.json();
 
   return data.data;
@@ -120,13 +120,12 @@ export const getMovieTrailer = async (movieId) => {
   return data.data;
 };
 
-
 // ===============================
 // Search Movies
 // ===============================
 export const searchMovies = async (query) => {
   const response = await fetch(
-    `https://cineversebackend1-lll317sb.b4a.run/api/v1/movies/search?query=${encodeURIComponent(query)}`
+    `https://cineversebackend1-lll317sb.b4a.run/api/v1/movies/search?query=${encodeURIComponent(query)}`,
   );
 
   if (!response.ok) {
