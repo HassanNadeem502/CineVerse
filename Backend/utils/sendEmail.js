@@ -6,13 +6,15 @@ const sendEmail = async (to, subject, html) => {
       throw new Error("EMAIL_USER and EMAIL_PASS must be set in Backend/.env");
     }
 
-    // dotenv.config() has already run by the time this function is called.
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // TLS use hoga, SSL nahi
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      family: 4, // IPv4 force karo, IPv6 ka masla avoid karne ke liye
     });
 
     await transporter.sendMail({
