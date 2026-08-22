@@ -1,28 +1,21 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendEmail = async (to, subject, html) => {
   try {
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      throw new Error("EMAIL_USER and EMAIL_PASS must be set in Backend/.env");
-    }
-
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false, // TLS use hoga, SSL nahi
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      family: 4, // IPv4 force karo, IPv6 ka masla avoid karne ke liye
-    });
-
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const { data, error } = await resend.emails.send({
+      from: "CineVerse <onboarding@resend.dev>",
       to,
       subject,
       html,
     });
+
+    if (error) {
+      console.log("❌ Email Error:", error);
+      throw error;
+    }
+
     console.log("✅ Email Sent Successfully");
   } catch (error) {
     console.log("❌ Email Error:", error);
