@@ -1,4 +1,4 @@
-const API = "https://cineversebackend1-686lr7gq.b4a.run/api/v1/user";
+const API = "https://cineversebackend1-xnz2tmdg.b4a.run/api/v1/user";
 
 export const uploadProfileImage = async (file, token) => {
   const formData = new FormData();
@@ -33,7 +33,7 @@ export const updateProfile = async (data, token) => {
 //-------------Change Password-----------------
 export const changePassword = async (passwordData, token) => {
   const response = await fetch(
-    "https://cineversebackend1-686lr7gq.b4a.run/api/v1/user/change-password",
+    "https://cineversebackend1-xnz2tmdg.b4a.run/api/v1/user/change-password",
     {
       method: "PUT",
 

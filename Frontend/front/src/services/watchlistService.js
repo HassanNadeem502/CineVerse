@@ -1,4 +1,4 @@
-const BASE_URL = "https://cineversebackend1-686lr7gq.b4a.run/api/v1/watchlist";
+const BASE_URL = "https://cineversebackend1-xnz2tmdg.b4a.run/api/v1/watchlist";
 
 // Toggle Watchlist
 export const toggleWatchlist = async (movieId) => {
