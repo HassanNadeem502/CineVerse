@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api/v1/auth";
+const BASE_URL = "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth";
 
 export const registerUser = async (userData) => {
   const response = await fetch(`${BASE_URL}/register`, {
@@ -30,7 +30,7 @@ export const loginUser = async (userData) => {
 export const verifyEmail = async(formData)=>{
 
     const response = await fetch(
-        "http://localhost:3000/api/v1/auth/verify-email",
+        "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/verify-email",
         {
             method:"POST",
             headers:{
@@ -46,7 +46,7 @@ export const verifyEmail = async(formData)=>{
 //Resend OTP api
 export const resendOTP = async (data) => {
   const response = await fetch(
-    "http://localhost:3000/api/v1/auth/resend-otp",
+    "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/resend-otp",
     {
       method: "POST",
       headers: {  
@@ -62,7 +62,7 @@ export const resendOTP = async (data) => {
 //resetpassword api
 export const resetPassword = async (data) => {
   const response = await fetch(
-    "http://localhost:3000/api/v1/auth/reset-password",
+    "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/reset-password",
     {
       method: "POST",
       headers: {
@@ -78,7 +78,7 @@ export const resetPassword = async (data) => {
 //forgotpassword api
 export const forgotPassword = async (data) => {
   const response = await fetch(
-    "http://localhost:3000/api/v1/auth/forgot-password",
+    "https://cineversebackend1-lll317sb.b4a.run/api/v1/auth/forgot-password",
     {
       method: "POST",
       headers: {
