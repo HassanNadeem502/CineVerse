@@ -10,6 +10,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://cine-verse-fcap3bu9o-hassannadeem502s-projects.vercel.app",
+  "https://cine-verse-4rr2-git-main-hassannadeem502s-projects.vercel.app",
 ];
 
 app.use(
